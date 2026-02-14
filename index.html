@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeswin Jose | Creative Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="antialiased bg-[#050505] text-white overflow-x-hidden">
+    <!-- Preloader -->
+    <div id="loader" class="fixed inset-0 z-[200] bg-[#050505] flex flex-col justify-center items-center transition-opacity duration-700">
+        <div class="relative w-24 h-24 mb-8">
+            <div class="absolute inset-0 border-2 border-white/10 rounded-full"></div>
+            <div class="absolute inset-0 border-t-2 border-cyan-400 rounded-full animate-spin"></div>
+            <div class="absolute inset-0 flex items-center justify-center text-xs font-bold tracking-widest text-white">
+                <span id="loader-percentage">0</span>%
+            </div>
+        </div>
+        <div class="overflow-hidden">
+            <div id="loader-text" class="text-xs uppercase tracking-[0.4em] font-medium animate-pulse">Initializing Experience</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-[100] px-6 py-4 md:px-12 flex justify-between items-center bg-black/80 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
+        <div class="text-2xl font-bold tracking-tighter">
+            J<span class="gradient-text">.</span>J
+        </div>
+        <div class="hidden md:flex space-x-12 text-xs uppercase tracking-[0.2em] font-medium">
+            <a href="#home" class="hover:text-cyan-400 transition-colors duration-300">Home</a>
+            <a href="#work" class="hover:text-cyan-400 transition-colors duration-300">Work</a>
+            <a href="#contact" class="hover:text-cyan-400 transition-colors duration-300">Contact</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <button class="hidden sm:block text-xs px-6 py-2.5 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all duration-500">
+                SAY HELLO
+            </button>
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[90] bg-black hidden flex flex-col justify-center items-center gap-8 text-3xl font-bold">
+        <a href="#home" class="hover:text-cyan-400">Home</a>
+        <a href="#work" class="hover:text-cyan-400">Work</a>
+        <a href="#contact" class="hover:text-cyan-400">Contact</a>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-[100svh] flex flex-col justify-center items-center px-6 pt-24 overflow-hidden">
+            <div class="hero-blob top-[10%] left-[5%] md:left-[10%]"></div>
+            <div class="hero-blob bottom-[10%] right-[5%] md:right-[10%] bg-[#ff00c1] opacity-10"></div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-7xl w-full items-center z-10">
+                <div class="order-2 lg:order-1 text-center lg:text-left">
+                    <h2 class="text-cyan-400 font-semibold mb-4 lg:mb-6 tracking-[0.3em] text-[10px] md:text-sm uppercase">
+                        Welcome to my world
+                    </h2>
+                    <h1 class="text-5xl md:text-7xl lg:text-9xl font-bold mb-6 lg:mb-8 leading-[1.1] tracking-tighter">
+                        Jeswin<br class="hidden sm:block"/>
+                        <span class="gradient-text">Jose</span>
+                    </h1>
+                    <p class="text-gray-400 text-sm md:text-xl mb-8 lg:mb-10 max-w-md mx-auto lg:mx-0 leading-relaxed">
+                        Crafting digital experiences that merge functionality with artistic vision. I'm a developer, designer, and dreamer.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center">
+                        <a href="#work" class="w-full sm:w-auto px-8 py-4 lg:px-10 lg:py-5 bg-white text-black font-bold rounded-xl lg:rounded-2xl hover:bg-cyan-400 hover:text-white transition-all duration-300 transform hover:-translate-y-1">
+                            View Projects
+                        </a>
+                        <div class="flex gap-8 items-center">
+                            <a href="https://github.com/jeswinjoss" class="text-2xl text-white/40 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/jeswin-jose-40a38b332/" class="text-2xl text-white/40 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 lg:order-2 flex justify-center">
+                    <div class="photo-frame glass p-2 md:p-3">
+                        <img src="jeswin.jpg" alt="Jeswin Jose Portrait" loading="lazy">
+                        <div class="absolute bottom-0 left-0 w-full p-4 lg:p-6 bg-gradient-to-t from-black/95 to-transparent">
+                            <p class="text-[9px] lg:text-[10px] font-bold tracking-[0.2em] uppercase text-cyan-400">
+                                Based in Kerala, India
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section id="work" class="py-24 md:py-32 px-6 bg-[#080808]">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 lg:mb-16 gap-4">
+                    <div class="w-full">
+                        <h2 class="text-4xl md:text-6xl font-bold mb-4 tracking-tighter italic">Selected Works</h2>
+                        <p class="text-gray-500 text-base md:text-lg">A curated list of my favorite projects.</p>
+                    </div>
+                    <div class="hidden md:block text-8xl font-black text-white/5 select-none">01</div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-16">
+                    <!-- Project 1 -->
+                    <div class="glass group overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] p-3 md:p-4 hover:border-white/20 transition-all duration-500">
+                        <div class="h-56 md:h-80 bg-zinc-900 rounded-[1.2rem] md:rounded-[2rem] mb-6 md:mb-8 flex items-center justify-center overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+                                 alt="Neural Interface">
+                        </div>
+                        <div class="px-2 md:px-4 pb-4">
+                            <h3 class="text-2xl md:text-3xl font-bold mb-2 md:mb-3 tracking-tight">Neural Interface</h3>
+                            <p class="text-gray-400 mb-4 md:mb-6 text-sm md:text-lg">Concept design for a futuristic UI kit with high-performance animations.</p>
+                            <div class="flex gap-2 md:gap-3">
+                                <span class="text-[9px] md:text-[10px] px-3 md:px-4 py-1.5 bg-white/5 border border-white/10 rounded-full font-medium tracking-wider uppercase">Figma</span>
+                                <span class="text-[9px] md:text-[10px] px-3 md:px-4 py-1.5 bg-white/5 border border-white/10 rounded-full font-medium tracking-wider uppercase">Three.js</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="glass group overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] p-3 md:p-4 hover:border-white/20 transition-all duration-500">
+                        <div class="h-56 md:h-80 bg-zinc-900 rounded-[1.2rem] md:rounded-[2rem] mb-6 md:mb-8 flex items-center justify-center overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&q=80&w=800" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+                                 alt="Crypto Pulse">
+                        </div>
+                        <div class="px-2 md:px-4 pb-4">
+                            <h3 class="text-2xl md:text-3xl font-bold mb-2 md:mb-3 tracking-tight">Crypto Pulse</h3>
+                            <p class="text-gray-400 mb-4 md:mb-6 text-sm md:text-lg">Real-time data visualization dashboard for complex market analysis.</p>
+                            <div class="flex gap-2 md:gap-3">
+                                <span class="text-[9px] md:text-[10px] px-3 md:px-4 py-1.5 bg-white/5 border border-white/10 rounded-full font-medium tracking-wider uppercase">React</span>
+                                <span class="text-[9px] md:text-[10px] px-3 md:px-4 py-1.5 bg-white/5 border border-white/10 rounded-full font-medium tracking-wider uppercase">D3.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 md:py-20 px-6 border-t border-white/5 text-center">
+        <div class="mb-6 md:mb-8 text-xl font-bold">J<span class="gradient-text">.</span>J</div>
+        <p class="text-gray-500 text-[10px] md:text-sm tracking-widest leading-loose">
+            &copy; 2024 JESWIN JOSE. <br class="md:hidden"/> HANDCRAFTED WITH PASSION.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
