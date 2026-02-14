@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Jeswin Jose</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="antialiased bg-[#050505] text-white overflow-x-hidden">
+    <!-- Preloader -->
+    <div id="loader" class="fixed inset-0 z-[200] bg-[#050505] flex flex-col justify-center items-center transition-opacity duration-700">
+        <div class="relative w-24 h-24 mb-8">
+            <div class="absolute inset-0 border-2 border-white/10 rounded-full"></div>
+            <div class="absolute inset-0 border-t-2 border-cyan-400 rounded-full animate-spin"></div>
+            <div class="absolute inset-0 flex items-center justify-center text-xs font-bold tracking-widest text-white">
+                <span id="loader-percentage">0</span>%
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-[100] px-6 py-4 md:px-12 flex justify-between items-center bg-black/80 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
+        <div class="text-2xl font-bold tracking-tighter">
+            <a href="index.html">J<span class="gradient-text">.</span>J</a>
+        </div>
+        <div class="hidden md:flex space-x-12 text-xs uppercase tracking-[0.2em] font-medium">
+            <a href="index.html#home" class="hover:text-cyan-400 transition-colors duration-300">Home</a>
+            <a href="index.html#work" class="hover:text-cyan-400 transition-colors duration-300">Work</a>
+            <a href="index.html#contact" class="hover:text-cyan-400 transition-colors duration-300">Contact</a>
+            <a href="about.html" class="text-cyan-400">Who am i ?</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <a href="hello.html" class="hidden sm:block text-xs px-6 py-2.5 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all duration-500 text-center">
+                SAY HELLO
+            </a>
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[90] bg-black hidden flex flex-col justify-center items-center gap-8 text-3xl font-bold">
+        <a href="index.html#home" class="hover:text-cyan-400">Home</a>
+        <a href="index.html#work" class="hover:text-cyan-400">Work</a>
+        <a href="index.html#contact" class="hover:text-cyan-400">Contact</a>
+        <a href="about.html" class="text-cyan-400">Who am i ?</a>
+        <a href="hello.html" class="text-xl text-cyan-400 border border-cyan-400/30 px-6 py-2 rounded-full">SAY HELLO</a>
+    </div>
+
+    <main class="pt-32 pb-24 px-6">
+        <div class="hero-blob top-[20%] right-[10%] bg-[#4facfe] opacity-10"></div>
+        <div class="hero-blob bottom-[20%] left-[5%] bg-[#00f2fe] opacity-10"></div>
+
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-start">
+            <!-- Left: Photo -->
+            <div class="lg:col-span-5 flex justify-center lg:justify-start">
+                <div class="photo-frame glass p-2 md:p-3">
+                    <img src="aboutpic.jpg" alt="Jeswin Jose Profile" loading="lazy">
+                    <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/95 to-transparent">
+                        <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-cyan-400">
+                            Behind the code
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Content -->
+            <div class="lg:col-span-7">
+                <h2 class="text-cyan-400 font-semibold mb-6 tracking-[0.3em] text-sm uppercase">Biography</h2>
+                <h1 class="text-5xl md:text-7xl font-bold mb-8 tracking-tighter">
+                    A Story of <br/>
+                    <span class="gradient-text">Pixels & Logic</span>
+                </h1>
+                
+                <div class="space-y-6 text-gray-400 text-lg leading-relaxed max-w-2xl">
+                    <p>
+                        I'm Jeswin Jose, a passionate developer based in Kerala, India. My journey into the digital realm started with a curiosity for how things work behind the screen, which eventually evolved into a professional pursuit of excellence in web design and software development.
+                    </p>
+                    <p>
+                        With a focus on building high-performance applications and immersive user experiences, I bridge the gap between complex engineering and elegant design. I believe every line of code is an opportunity to solve a problem and create something meaningful.
+                    </p>
+                    <p>
+                        Expanding on this vision, I recently launched Mallu Finance India, a dedicated platform offering essential financial services including loans and credit cards. My goal with this project is to provide a secure environment where users can explore financial products from trusted, verified sources, ensuring that navigating the world of finance is as safe as it is accessible.
+                    </p>
+                    <div class="pt-8 grid grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-white font-bold mb-2 uppercase text-xs tracking-widest">Technical</h4>
+                            <ul class="text-sm space-y-2">
+                                <li>Frontend Architecture</li>
+                                <li>React / Next.js</li>
+                                <li>Tailwind Ecosystem</li>
+                                <li>Fullstack Integration</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold mb-2 uppercase text-xs tracking-widest">Creative</h4>
+                            <ul class="text-sm space-y-2">
+                                <li>UI/UX Design</li>
+                                <li>Motion Graphics</li>
+                                <li>Brand Identity</li>
+                                <li>Visual Storytelling</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 flex items-center gap-6">
+                    <a href="index.html#work" class="text-sm font-bold tracking-widest uppercase border-b-2 border-cyan-400 pb-1 hover:text-cyan-400 transition-all">
+                        View My Work
+                    </a>
+                    <span class="w-12 h-px bg-white/20"></span>
+                    <div class="flex gap-4">
+                        <a href="www.instagram.com/@jes2in_joss" class="text-white/40 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/jeswinjoss" class="text-white/40 hover:text-white transition-colors"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/jeswin-jose-40a38b332/" class="text-white/40 hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-12 px-6 border-t border-white/5 text-center">
+        <div class="mb-8 text-xl font-bold">J<span class="gradient-text">.</span>J</div>
+        <p class="text-gray-500 text-[10px] tracking-widest">&copy; 2026 JESWIN JOSE. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
