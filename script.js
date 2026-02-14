@@ -25,17 +25,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileLinks = mobileMenu?.querySelectorAll('a');
+    const menuIcon = mobileMenuBtn?.querySelector('i');
 
     if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            document.body.classList.toggle('overflow-hidden');
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isHidden = mobileMenu.classList.contains('hidden');
+            
+            if (isHidden) {
+                // Open menu
+                mobileMenu.classList.remove('hidden');
+                document.body.classList.add('overflow-hidden');
+                if (menuIcon) {
+                    menuIcon.classList.remove('fa-bars-staggered');
+                    menuIcon.classList.add('fa-xmark');
+                }
+            } else {
+                // Close menu
+                mobileMenu.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+                if (menuIcon) {
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars-staggered');
+                }
+            }
         });
 
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
                 document.body.classList.remove('overflow-hidden');
+                if (menuIcon) {
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars-staggered');
+                }
             });
         });
     }
