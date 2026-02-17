@@ -3,155 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeswin Jose | Creative Portfolio</title>
-    <meta name="description" content="Explore the portfolio of Jeswin Jose, a professional web developer and designer based in Kerala, India. Specializing in high-performance applications, UI/UX design, and innovative digital solutions like Mallu Finance.">
+    <title>Jeswin Jose | Digital Architect</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9630835038502007"
-     crossorigin="anonymous"></script>
-    <meta name="google-adsense-account" content="ca-pub-9630835038502007">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00f2fe',
+                        dark: '#020202',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="antialiased bg-[#050505] text-white overflow-x-hidden">
+<body class="antialiased bg-dark text-white selection:bg-primary selection:text-dark">
+    <!-- Dynamic Background -->
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <div class="hero-blob top-[-10%] right-[-10%]"></div>
+        <div class="hero-blob bottom-[-10%] left-[-10%] bg-[#a29bfe]"></div>
+    </div>
+
     <!-- Preloader -->
-    <div id="loader" class="fixed inset-0 z-[200] bg-[#050505] flex flex-col justify-center items-center transition-opacity duration-700">
-        <div class="relative w-24 h-24 mb-8">
-            <div class="absolute inset-0 border-2 border-white/10 rounded-full"></div>
-            <div class="absolute inset-0 border-t-2 border-cyan-400 rounded-full animate-spin"></div>
-            <div class="absolute inset-0 flex items-center justify-center text-xs font-bold tracking-widest text-white">
-                <span id="loader-percentage">0</span>%
+    <div id="loader" class="fixed inset-0 z-[200] bg-dark flex flex-col justify-center items-center transition-opacity duration-1000">
+        <div class="relative w-32 h-32">
+            <svg class="w-full h-full transform -rotate-90">
+                <circle cx="64" cy="64" r="60" stroke="currentColor" stroke-width="2" fill="transparent" class="text-white/5" />
+                <circle id="loader-circle" cx="64" cy="64" r="60" stroke="#00f2fe" stroke-width="2" fill="transparent" stroke-dasharray="377" stroke-dashoffset="377" class="transition-all duration-100" />
+            </svg>
+            <div class="absolute inset-0 flex items-center justify-center font-bold tracking-tighter text-xl">
+                <span id="loader-percentage">0</span>
             </div>
-        </div>
-        <div class="overflow-hidden">
-            <div id="loader-text" class="text-xs uppercase tracking-[0.4em] font-medium animate-pulse">Initializing Experience</div>
         </div>
     </div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 w-full z-[100] px-6 py-4 md:px-12 flex justify-between items-center bg-black/80 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
-        <div class="text-2xl font-bold tracking-tighter">
-            J<span class="gradient-text">.</span>J
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] md:w-[80%] max-w-7xl z-[100] glass px-8 py-4 rounded-full flex justify-between items-center transition-all duration-500">
+        <div class="text-xl font-black tracking-tighter">
+            <a href="index.html">J<span class="text-primary">.</span>J</a>
         </div>
-        <div class="hidden md:flex space-x-12 text-xs uppercase tracking-[0.2em] font-medium">
-            <a href="#home" class="text-cyan-400">Home</a>
-            <a href="#work" class="hover:text-cyan-400 transition-colors duration-300">Work</a>
-            <a href="#contact" class="hover:text-cyan-400 transition-colors duration-300">Contact</a>
-            <a href="about.html" class="hover:text-cyan-400 transition-colors duration-300">Who am i ?</a>
-         <a href="mallufinance.html" class="hover:text-cyan-400 transition-colors duration-300">Organisation</a>
+        <div class="hidden md:flex space-x-10 text-[10px] uppercase tracking-[0.3em] font-bold">
+            <a href="#home" class="nav-link text-primary">Home</a>
+            <a href="#work" class="nav-link">Work</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="mallufinance.html" class="nav-link">Organisation</a>
         </div>
-        <div class="flex items-center gap-4">
-            <a href="hello.html" class="hidden sm:block text-xs px-6 py-2.5 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all duration-500 text-center">
+        <div class="flex items-center gap-6">
+            <a href="hello.html" class="hidden sm:block text-[10px] font-black tracking-widest px-6 py-2 bg-white text-dark rounded-full hover:bg-primary hover:scale-105 transition-all">
                 SAY HELLO
             </a>
-            <button id="mobile-menu-btn" class="md:hidden p-2 text-2xl focus:outline-none">
+            <button id="mobile-menu-btn" class="md:hidden text-2xl">
                 <i class="fa-solid fa-bars-staggered"></i>
             </button>
         </div>
     </nav>
 
-    <!-- Mobile Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 z-[90] bg-black hidden flex flex-col justify-center items-center gap-8 text-3xl font-bold">
-        <a href="#home" class="text-cyan-400">Home</a>
-        <a href="#work" class="hover:text-cyan-400">Work</a>
-        <a href="#contact" class="hover:text-cyan-400">Contact</a>
-        <a href="about.html" class="hover:text-cyan-400">Who am i ?</a>
-     <a href="mallufinance.html" class="hover:text-cyan-400">Organisation</a>
-        
-        <a href="hello.html" class="text-xl text-cyan-400 border border-cyan-400/30 px-6 py-2 rounded-full">SAY HELLO</a>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-[150] bg-dark hidden flex-col justify-center items-center gap-10 p-12">
+        <button class="absolute top-10 right-10 text-3xl" id="menu-close"><i class="fa-solid fa-xmark"></i></button>
+        <a href="#home" class="text-5xl font-black">HOME</a>
+        <a href="#work" class="text-5xl font-black">WORK</a>
+        <a href="about.html" class="text-5xl font-black">ABOUT</a>
+        <a href="mallufinance.html" class="text-5xl font-black text-primary">MALLU FI</a>
     </div>
 
     <main>
-        <!-- Hero Section -->
-        <section id="home" class="relative min-h-[100svh] flex flex-col justify-center items-center px-6 pt-24 overflow-hidden">
-            <div class="hero-blob top-[10%] left-[5%] md:left-[10%]"></div>
-            <div class="hero-blob bottom-[10%] right-[5%] md:right-[10%] bg-[#ff00c1] opacity-10"></div>
-            
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-7xl w-full items-center z-10">
-                <div class="order-2 lg:order-1 text-center lg:text-left">
-                    <h2 class="text-cyan-400 font-semibold mb-4 lg:mb-6 tracking-[0.3em] text-[10px] md:text-sm uppercase">
-                        Welcome to my world
-                    </h2>
-                    <h1 class="text-5xl md:text-7xl lg:text-9xl font-bold mb-6 lg:mb-8 leading-[1.1] tracking-tighter">
-                        Jeswin<br class="hidden sm:block"/>
-                        <span class="gradient-text">Jose</span>
+        <!-- Hero -->
+        <section id="home" class="min-h-screen flex items-center justify-center px-6 pt-20">
+            <div class="max-w-7xl w-full grid lg:grid-cols-2 gap-20 items-center">
+                <div class="text-center lg:text-left">
+                    <div class="inline-block px-4 py-1.5 glass rounded-full text-[10px] font-bold tracking-[0.3em] text-primary mb-8 uppercase">
+                        Available for new projects
+                    </div>
+                    <h1 class="text-6xl md:text-8xl lg:text-9xl font-black mb-10 leading-[0.9] tracking-tighter">
+                        Digital <br/>
+                        <span class="gradient-text italic font-normal">Architect.</span>
                     </h1>
-                    <p class="text-gray-400 text-sm md:text-xl mb-8 lg:mb-10 max-w-md mx-auto lg:mx-0 leading-relaxed">
-                        Crafting digital experiences that merge functionality with artistic vision. I'm a developer, designer, and dreamer.
+                    <p class="text-gray-400 text-lg md:text-xl mb-12 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                        Jeswin Jose here — crafting high-octane web experiences where precision meets radical design.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center">
-                        <a href="#work" class="w-full sm:w-auto px-8 py-4 lg:px-10 lg:py-5 bg-white text-black font-bold rounded-xl lg:rounded-2xl hover:bg-cyan-400 hover:text-white transition-all duration-300 transform hover:-translate-y-1">
-                            View Projects
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-6">
+                        <a href="#work" class="px-10 py-5 bg-primary text-dark font-black rounded-2xl hover:bg-white transition-all transform hover:-translate-y-1">
+                            EXPLORE WORK
                         </a>
-                        <div class="flex gap-8 items-center">
-                            <a href="https://github.com/jeswinjoss" class="text-2xl text-white/40 hover:text-white transition-colors duration-300">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/jeswin-jose-40a38b332/" class="text-2xl text-white/40 hover:text-white transition-colors duration-300">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
+                        <div class="flex gap-6 items-center px-4">
+                            <a href="https://github.com/jeswinjoss" class="text-2xl hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
+                            <a href="#" class="text-2xl hover:text-primary transition-colors"><i class="fab fa-linkedin"></i></a>
                         </div>
                     </div>
                 </div>
-                
-                <div class="order-1 lg:order-2 flex justify-center">
-                    <div class="photo-frame glass p-2 md:p-3">
-                        <img src="jeswin.jpg" alt="Jeswin Jose Portrait" loading="lazy">
-                        <div class="absolute bottom-0 left-0 w-full p-4 lg:p-6 bg-gradient-to-t from-black/95 to-transparent">
-                            <p class="text-[9px] lg:text-[10px] font-bold tracking-[0.2em] uppercase text-cyan-400">
-                                Based in Kerala, India
-                            </p>
-                        </div>
+                <div class="relative flex justify-center lg:justify-end">
+                    <div class="photo-frame w-full max-w-[450px] aspect-[4/5] bg-[#111]">
+                        <img src="jeswin.jpg" alt="Jeswin Jose" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Work Section -->
-        <section id="work" class="py-24 md:py-32 px-6 bg-[#080808]">
+        <!-- Work -->
+        <section id="work" class="py-32 px-6 bg-white/5">
             <div class="max-w-7xl mx-auto">
-                <div class="flex flex-col md:flex-row justify-between items-end mb-12 lg:mb-16 gap-4">
-                    <div class="w-full">
-                        <h2 class="text-4xl md:text-7xl font-extrabold mb-4 tracking-tight uppercase font-heading">Selected Works</h2>
-                        <p class="text-gray-500 text-base md:text-lg">A curated list of my favorite projects.</p>
-                    </div>
-                    <div class="hidden md:block text-8xl font-black text-white/5 select-none">01</div>
+                <div class="mb-20">
+                    <h2 class="text-4xl md:text-7xl font-black mb-4 uppercase">Case Studies</h2>
+                    <p class="text-gray-500 max-w-md">Pushing the boundaries of the web through technical excellence.</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-8 lg:gap-16">
-                    <!-- Project 1 -->
-                    <div class="glass group overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] p-3 md:p-4 hover:border-white/20 transition-all duration-500">
-                        <div class="h-56 md:h-80 bg-zinc-900 rounded-[1.2rem] md:rounded-[2rem] mb-6 md:mb-8 flex items-center justify-center overflow-hidden">
-                            <img src="mallufinance.jpg" 
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
-                                 alt="Neural Interface">
+                <div class="grid md:grid-cols-2 gap-10">
+                    <!-- Card 1 -->
+                    <div class="project-card glass rounded-[3rem] p-4 group">
+                        <div class="relative aspect-video rounded-[2.5rem] overflow-hidden mb-8">
+                            <img src="mallufinance.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                            <div class="absolute inset-0 bg-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="px-8 py-3 bg-white text-dark font-bold rounded-full">VIEW CASE</span>
+                            </div>
                         </div>
-                        <div class="px-2 md:px-4 pb-4">
-                            <h3 class="text-2xl md:text-3xl font-bold mb-2 md:mb-3 tracking-tight">Finance Portal</h3>
-                            <p class="text-gray-400 mb-4 md:mb-6 text-sm md:text-lg">Vibrant design for a futuristic finance website with ultra smooth animations.</p>
-                            <div class="flex gap-2 md:gap-3">
-                                <span class="text-[9px] md:text-[10px] px-3 md:px-4 py-1.5 bg-white/5 border border-white/10 rounded-full font-medium tracking-wider uppercase">Html</span>
-                                <span class="text-[9px] md:text-[10px] px-3 md:px-4 py-1.5 bg-white/5 border border-white/10 rounded-full font-medium tracking-wider uppercase">Javascript</span>
-                                <span class="text-[9px] md:text-[10px] px-3 md:px-4 py-1.5 bg-white/5 border border-white/10 rounded-full font-medium tracking-wider uppercase">Tailwind CSS</span>
-                                <span class="text-[9px] md:text-[10px] px-3 md:px-4 py-1.5 bg-white/5 border border-white/10 rounded-full font-medium tracking-wider uppercase">React</span>
+                        <div class="px-6 pb-6">
+                            <h3 class="text-3xl font-black mb-4 uppercase tracking-tighter">Mallu Finance</h3>
+                            <div class="flex gap-3">
+                                <span class="text-[10px] font-bold tracking-widest px-4 py-1.5 border border-white/10 rounded-full">FINTECH</span>
+                                <span class="text-[10px] font-bold tracking-widest px-4 py-1.5 border border-white/10 rounded-full">UX DESIGN</span>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Project 2 -->
-                    <div class="glass group overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] p-3 md:p-4 hover:border-white/20 transition-all duration-500">
-                        <div class="h-56 md:h-80 bg-zinc-900 rounded-[1.2rem] md:rounded-[2rem] mb-6 md:mb-8 flex items-center justify-center overflow-hidden">
-                            <img src="webartnet.jpg" 
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
-                                 alt="Crypto Pulse">
+                    <!-- Card 2 -->
+                    <div class="project-card glass rounded-[3rem] p-4 group">
+                        <div class="relative aspect-video rounded-[2.5rem] overflow-hidden mb-8">
+                            <img src="webartnet.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                            <div class="absolute inset-0 bg-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="px-8 py-3 bg-white text-dark font-bold rounded-full">VIEW CASE</span>
+                            </div>
                         </div>
-                        <div class="px-2 md:px-4 pb-4">
-                            <h3 class="text-2xl md:text-3xl font-bold mb-2 md:mb-3 tracking-tight">Fullstack Saas project</h3>
-                            <p class="text-gray-400 mb-4 md:mb-6 text-sm md:text-lg">A efficent website and web app develop software that powere by Ai.</p>
-                            <div class="flex gap-2 md:gap-3">
-                                <span class="text-[9px] md:text-[10px] px-3 md:px-4 py-1.5 bg-white/5 border border-white/10 rounded-full font-medium tracking-wider uppercase">React</span>
-                                <span class="text-[9px] md:text-[10px] px-3 md:px-4 py-1.5 bg-white/5 border border-white/10 rounded-full font-medium tracking-wider uppercase">D3.js</span>
-                                <span class="text-[9px] md:text-[10px] px-3 md:px-4 py-1.5 bg-white/5 border border-white/10 rounded-full font-medium tracking-wider uppercase">Tailwind css</span>
-                                <span class="text-[9px] md:text-[10px] px-3 md:px-4 py-1.5 bg-white/5 border border-white/10 rounded-full font-medium tracking-wider uppercase">n8n workflow</span>
+                        <div class="px-6 pb-6">
+                            <h3 class="text-3xl font-black mb-4 uppercase tracking-tighter">AI Workflow</h3>
+                            <div class="flex gap-3">
+                                <span class="text-[10px] font-bold tracking-widest px-4 py-1.5 border border-white/10 rounded-full">SAAS</span>
+                                <span class="text-[10px] font-bold tracking-widest px-4 py-1.5 border border-white/10 rounded-full">AUTOMATION</span>
                             </div>
                         </div>
                     </div>
@@ -160,11 +149,17 @@
         </section>
     </main>
 
-    <footer class="py-12 md:py-20 px-6 border-t border-white/5 text-center">
-        <div class="mb-6 md:mb-8 text-xl font-bold">J<span class="gradient-text">.</span>J</div>
-        <p class="text-gray-500 text-[10px] md:text-sm tracking-widest leading-loose">
-            &copy; 2026 JESWIN JOSE. <br class="md:hidden"/> HANDCRAFTED WITH PASSION.
-        </p>
+    <footer class="py-20 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="text-3xl font-black">J<span class="text-primary">.</span>J</div>
+            <div class="text-[10px] font-bold tracking-[0.5em] text-gray-500 uppercase">
+                &copy; 2026 Jeswin Jose. Handcrafted in Kerala.
+            </div>
+            <div class="flex gap-8 text-xl text-gray-500">
+                <a href="#" class="hover:text-primary transition-colors"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-primary transition-colors"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
