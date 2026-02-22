@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -14,11 +15,20 @@
                     colors: {
                         primary: '#00f2fe',
                         dark: '#050505',
+                    },
+                    fontFamily: {
+                        logo: ['Syncopate', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
+    <style>
+        .photo-mask {
+            -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+        }
+    </style>
 </head>
 <body class="antialiased bg-dark text-white selection:bg-primary selection:text-dark">
     <div id="custom-cursor"></div>
@@ -104,7 +114,7 @@
                     </div>
                     <h1 class="text-7xl md:text-[10rem] font-black mb-10 leading-[0.85] tracking-tighter">
                         Digital <br/>
-                        <span class="gradient-text italic font-normal tracking-tight">Architect</span>
+                        <span class="gradient-text font-logo font-bold uppercase tracking-[-0.05em] text-[0.8em]">Architect</span>
                     </h1>
                     <p class="text-gray-400 text-lg md:text-2xl mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
                         Designing the future of the web through <span class="text-white font-medium">precise engineering</span> and <span class="text-white font-medium">visual storytelling</span>.
@@ -120,9 +130,11 @@
                     </div>
                 </div>
                 <div class="reveal lg:col-span-5 relative" style="transition-delay: 300ms">
-                    <div class="photo-frame aspect-[4/5] max-w-[450px] mx-auto">
-                        <img src="jeswin.jpg" alt="Jeswin Jose" loading="lazy" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-105 hover:scale-100">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent opacity-60"></div>
+                    <div class="photo-frame aspect-[4/5] max-w-[450px] mx-auto overflow-hidden">
+                        <div class="w-full h-full relative photo-mask">
+                            <img src="jeswin.jpg" alt="Jeswin Jose" loading="lazy" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-105 hover:scale-100">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent opacity-100"></div>
+                        </div>
                     </div>
                     <div class="absolute -bottom-6 -right-6 glass p-6 rounded-3xl hidden md:block">
                         <div class="text-3xl font-black">05+</div>
