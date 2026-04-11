@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeswin Jose | YouTube Content</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Space Grotesk"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'brutal': '6px 6px 0px 0px rgba(0,0,0,1)',
+                        'brutal-hover': '2px 2px 0px 0px rgba(0,0,0,1)',
+                    },
+                    colors: {
+                        brand: {
+                            bg: '#fbf8f1',
+                            yellow: '#ffd230',
+                            blue: '#4d9fff',
+                            purple: '#b57aff',
+                            green: '#00e676'
+                        }
+                    },
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #fbf8f1;
+            background-image: radial-gradient(#000000 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+    </style>
+</head>
+<body class="text-black font-sans antialiased overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 bg-white border-b-4 border-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <div class="bg-brand-blue p-2 border-2 border-black shadow-brutal">
+                        <i class="fa-brands fa-youtube text-xl text-white"></i>
+                    </div>
+                    <a href="index.html" class="font-extrabold text-2xl tracking-tight uppercase hover:text-brand-blue">Jeswin<span class="text-brand-blue">Jose</span></a>
+                </div>
+                <div>
+                    <a href="index.html" class="bg-brand-yellow border-2 border-black font-bold px-6 py-2 shadow-brutal hover:shadow-brutal-hover hover:-translate-y-1 transition-all">
+                        BACK HOME
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h1 class="text-5xl md:text-7xl font-extrabold uppercase leading-tight">
+                    Latest <span class="bg-brand-blue text-white px-2 border-4 border-black inline-block transform -rotate-1 shadow-brutal">Uploads.</span>
+                </h1>
+            </div>
+            
+            <div class="relative overflow-hidden border-4 border-black bg-white shadow-brutal py-8">
+                <div class="flex animate-marquee whitespace-nowrap">
+                    <div class="flex gap-8 px-4">
+                        <div class="w-80 h-48 bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
+                            <img src="https://via.placeholder.com/320x180/4d9fff/ffffff?text=AI+Research" alt="Video" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-80 h-48 bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
+                            <img src="https://via.placeholder.com/320x180/ffd230/000000?text=Web+Automation" alt="Video" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-80 h-48 bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
+                            <img src="https://via.placeholder.com/320x180/b57aff/ffffff?text=Full-stack+Dev" alt="Video" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-80 h-48 bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
+                            <img src="https://via.placeholder.com/320x180/00e676/000000?text=Mallu+Finance" alt="Video" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="flex gap-8 px-4">
+                        <div class="w-80 h-48 bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
+                            <img src="https://via.placeholder.com/320x180/4d9fff/ffffff?text=AI+Research" alt="Video" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-80 h-48 bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
+                            <img src="https://via.placeholder.com/320x180/ffd230/000000?text=Web+Automation" alt="Video" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-80 h-48 bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
+                            <img src="https://via.placeholder.com/320x180/b57aff/ffffff?text=Full-stack+Dev" alt="Video" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-80 h-48 bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
+                            <img src="https://via.placeholder.com/320x180/00e676/000000?text=Mallu+Finance" alt="Video" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="options" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <a href="link.html" class="group bg-white border-4 border-black p-8 shadow-brutal hover:shadow-brutal-hover hover:-translate-y-1 transition-all">
+                    <div class="bg-brand-green w-16 h-16 border-4 border-black flex items-center justify-center mb-6 shadow-brutal group-hover:rotate-6 transition-transform">
+                        <i class="fa-solid fa-cart-shopping text-2xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-extrabold uppercase mb-2">Buy Links</h3>
+                    <p class="font-bold text-gray-600">Gear, software, and tools featured in my videos.</p>
+                </a>
+
+                <a href="link.html" class="group bg-white border-4 border-black p-8 shadow-brutal hover:shadow-brutal-hover hover:-translate-y-1 transition-all">
+                    <div class="bg-brand-yellow w-16 h-16 border-4 border-black flex items-center justify-center mb-6 shadow-brutal group-hover:-rotate-6 transition-transform">
+                        <i class="fa-solid fa-play text-2xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-extrabold uppercase mb-2">Playlists</h3>
+                    <p class="font-bold text-gray-600">Curated collections of tech tutorials and research.</p>
+                </a>
+
+                <a href="link.html" class="group bg-white border-4 border-black p-8 shadow-brutal hover:shadow-brutal-hover hover:-translate-y-1 transition-all">
+                    <div class="bg-brand-purple w-16 h-16 border-4 border-black flex items-center justify-center mb-6 shadow-brutal group-hover:rotate-12 transition-transform">
+                        <i class="fa-solid fa-comments text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-3xl font-extrabold uppercase mb-2">Live Chat</h3>
+                    <p class="font-bold text-gray-600">Join the community and chat during the next stream.</p>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-white py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="font-bold uppercase tracking-widest">© 2026 Jeswin Jose • Content Creator • Thrissur</p>
+        </div>
+    </footer>
+
+</body>
+</html>
