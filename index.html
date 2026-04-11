@@ -1,233 +1,186 @@
-<!DOCTYPE html> 
-<html lang="en" class="scroll-smooth overflow-x-hidden">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Jeswin Jose | The Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeswin Jose | Dev • AI • Content</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        primary: '#0a0a0a',
-                        accent: '#6366f1',
-                        surface: '#fdfdfd',
-                        muted: '#64748b'
-                    },
                     fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        heading: ['Outfit', 'sans-serif'],
+                        sans: ['"Space Grotesk"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'brutal': '6px 6px 0px 0px rgba(0,0,0,1)',
+                        'brutal-hover': '2px 2px 0px 0px rgba(0,0,0,1)',
+                    },
+                    colors: {
+                        brand: {
+                            bg: '#fbf8f1',
+                            yellow: '#ffd230',
+                            blue: '#4d9fff',
+                            pink: '#ff4d8d',
+                            purple: '#b57aff',
+                            green: '#00e676'
+                        }
                     }
                 }
             }
         }
     </script>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #fbf8f1;
+            background-image: radial-gradient(#000000 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+    </style>
 </head>
-<body class="bg-surface text-primary antialiased overflow-x-hidden w-full">
-    
-    <div id="custom-cursor" class="hidden lg:block"></div>
+<body class="text-black font-sans antialiased overflow-x-hidden">
 
-    <div id="loader" class="fixed inset-0 z-[200] flex flex-col justify-center items-center bg-primary transition-opacity duration-1000">
-        <div class="flex flex-col items-center">
-            <div class="w-32 mb-8 animate-pulse">
-                <img src="jessign.png" alt="JJ" class="w-full h-auto invert opacity-80">
-            </div>
-            <div class="w-48 h-[2px] bg-white/10 relative overflow-hidden rounded-full">
-                <div id="loader-bar" class="absolute inset-0 bg-accent translate-x-[-100%] transition-transform duration-300"></div>
-            </div>
-            <span id="loader-percentage" class="mt-6 text-[10px] tracking-[0.5em] text-white/40 font-bold uppercase">Initializing Engine</span>
-        </div>
-    </div>
-
-    <header id="island-header" class="fixed top-6 left-1/2 -translate-x-1/2 z-[100] w-[90%] max-w-6xl transition-all duration-500">
-        <nav id="island-nav" class="glass rounded-full px-6 md:px-8 py-3 md:py-4 flex justify-between items-center transition-all">
-            <div class="text-xl font-extrabold tracking-tighter">
-                <a href="index.html" class="flex items-center gap-3 group">
-                    <div class="flex items-center">
-                        <img src="jessign.png" alt="Jeswin Jose" class="h-8 md:h-10 w-auto transition-all duration-300 group-hover:scale-105">
+    <nav class="fixed w-full z-50 bg-white border-b-4 border-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <div class="bg-brand-purple p-2 border-2 border-black shadow-brutal">
+                        <i class="fa-solid fa-code-branch text-xl text-white"></i>
                     </div>
-                </a>
-            </div>
-            <div class="hidden md:flex space-x-10 text-[11px] font-bold tracking-[0.2em] uppercase">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#work" class="nav-link">Work</a>
-                <a href="about.html" class="nav-link">Who am i ?</a>
-                <a href="mallufinance.html" class="nav-link">Company</a>
-            </div>
-            <div class="flex items-center gap-4">
-                <a href="hello.html" class="hidden sm:flex items-center gap-2 text-[10px] font-bold tracking-widest px-6 py-3 bg-primary text-white rounded-full hover:bg-accent hover:scale-105 transition-all">
-                    LET'S TALK
-                </a>
-                <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center">
-                    <i class="fa-solid fa-bars-staggered text-lg"></i>
-                </button>
-            </div>
-        </nav>
-    </header>
-
-    <div id="mobile-menu" class="fixed inset-0 z-[150] bg-primary text-white translate-x-full transition-transform duration-700 flex flex-col p-8 md:p-12 overflow-y-auto">
-        <div class="flex justify-between items-center mb-16">
-            <span class="text-xs font-bold tracking-widest opacity-50 uppercase">Navigation</span>
-            <button id="menu-close" class="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/5">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </div>
-        <div class="flex flex-col gap-8 md:gap-10">
-            <a href="#home" class="text-4xl md:text-5xl font-heading font-bold hover:text-accent transition-colors">Home</a>
-            <a href="#work" class="text-4xl md:text-5xl font-heading font-bold hover:text-accent transition-colors">Work</a>
-            <a href="about.html" class="text-4xl md:text-5xl font-heading font-bold hover:text-accent transition-colors">Who am i ?</a>
-            <a href="mallufinance.html" class="text-4xl md:text-5xl font-heading font-bold hover:text-accent transition-colors">Company</a>
-        </div>
-    </div>
-
-    <main class="w-full overflow-x-hidden">
-        <section id="home" class="relative min-h-screen flex items-center justify-center pt-24 px-4 overflow-hidden">
-            <div class="hero-blob animate-soft-pulse left-[-10%] top-[-10%] opacity-20"></div>
-            <div class="hero-blob animate-soft-pulse right-[-10%] bottom-[-10%] opacity-20 bg-indigo-200"></div>
-            <div class="max-w-7xl w-full flex flex-col items-center text-center z-10">
-                <div class="reveal w-full">
-                    <div class="mb-8 inline-flex items-center gap-3 px-4 py-2 rounded-full border border-primary/5 bg-white/50 backdrop-blur-sm">
-                        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-                        <span class="text-[9px] md:text-[10px] font-bold tracking-[0.3em] uppercase opacity-70">Available for 2026 Projects</span>
-                    </div>
-                    <h1 class="text-5xl sm:text-7xl md:text-9xl font-heading font-extrabold mb-10 leading-[1.1] md:leading-[0.9] tracking-tight text-primary">
-                        Crafting <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-red-400">Digital Aura.</span>
-                    </h1>
-                    <p class="text-muted text-base md:text-2xl mb-14 max-w-2xl mx-auto font-medium leading-relaxed">
-                        Architecting high-fidelity digital interfaces where technical precision meets artistic soul. Based in India, working globally.
-                    </p>
-                    <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 px-4">
-                        <a href="#work" class="px-8 py-4 md:px-10 md:py-5 bg-primary text-white font-bold text-[10px] md:text-[11px] tracking-[0.2em] rounded-full hover:bg-accent transition-all shadow-2xl shadow-accent/20 hover:-translate-y-1">
-                            EXPLORE WORK
-                        </a>
-                        <a href="about.html" class="px-8 py-4 md:px-10 md:py-5 border-2 border-primary/5 bg-white font-bold text-[10px] md:text-[11px] tracking-[0.2em] rounded-full hover:border-primary/20 transition-all hover:-translate-y-1">
-                            Know Me
-                        </a>
-                    </div>
+                    <span class="font-extrabold text-2xl tracking-tight uppercase">Jeswin<span class="text-brand-blue">Jose</span></span>
                 </div>
-            </div>
-        </section>
-
-        <section id="work" class="py-24 md:py-40 px-4 md:px-6 bg-white border-y border-primary/5">
-            <div class="max-w-7xl mx-auto">
-                <div class="reveal mb-20 md:mb-32 flex flex-col md:flex-row md:items-end justify-between gap-10">
-                    <div class="max-w-xl">
-                        <span class="text-accent font-bold tracking-[0.4em] text-[10px] uppercase mb-6 block">Case Studies</span>
-                        <h2 class="text-4xl md:text-7xl font-heading font-bold tracking-tight mb-6">Selected Projects</h2>
-                        <p class="text-muted text-base md:text-lg font-medium">An uncompromising focus on performance and minimalist aesthetics.</p>
-                    </div>
+                <div class="hidden md:flex space-x-8 font-bold">
+                    <a href="#about" class="hover:text-brand-blue transition-colors">About</a>
+                    <a href="#projects" class="hover:text-brand-blue transition-colors">Projects</a>
+                    <a href="#youtube" class="hover:text-brand-purple transition-colors">YouTube</a>
                 </div>
-
-                <div class="grid lg:grid-cols-2 gap-12 md:gap-20">
-                    <div class="reveal group">
-                        <div class="relative aspect-video rounded-3xl md:rounded-[2.5rem] overflow-hidden mb-8 md:mb-10 bg-surface shadow-2xl transition-transform duration-700 group-hover:scale-[0.98]">
-                            <img src="mallufinance.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000">
-                            <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                                <a href="mallufinance.html" class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white text-primary flex items-center justify-center text-[10px] font-bold tracking-widest scale-50 group-hover:scale-100 transition-transform duration-500">VIEW CASE</a>
-                            </div>
-                        </div>
-                        <div class="px-2">
-                            <div class="flex justify-between items-center mb-4">
-                                <span class="text-[10px] font-bold text-accent tracking-[0.3em] uppercase">Fintech Ecosystem</span>
-                                <span class="text-[10px] font-bold text-muted uppercase">2024</span>
-                            </div>
-                            <h3 class="text-2xl md:text-3xl font-heading font-bold mb-4">Mallu Finance India</h3>
-                            <p class="text-muted mb-8 line-clamp-2 text-sm md:text-base">A comprehensive financial services platform bridging banking and the common man with seamless UI.</p>
-                        </div>
-                    </div>
-
-                    <div class="reveal group lg:mt-40">
-                        <div class="relative aspect-video rounded-3xl md:rounded-[2.5rem] overflow-hidden mb-8 md:mb-10 bg-surface shadow-2xl transition-transform duration-700 group-hover:scale-[0.98]">
-                            <img src="webartnet.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000">
-                            <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                                <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20 flex items-center justify-center text-[10px] font-bold tracking-widest scale-50 group-hover:scale-100 transition-transform duration-500 uppercase">Encrypted</div>
-                            </div>
-                        </div>
-                        <div class="px-2">
-                            <div class="flex justify-between items-center mb-4">
-                                <span class="text-[10px] font-bold text-accent tracking-[0.3em] uppercase">AI / SaaS</span>
-                                <span class="text-[10px] font-bold text-muted uppercase">Prototype</span>
-                            </div>
-                            <h3 class="text-2xl md:text-3xl font-heading font-bold mb-4">Intelligent Interfaces</h3>
-                            <p class="text-muted mb-8 line-clamp-2 text-sm md:text-base">Designing adaptive software that evolves with human behavior. Private beta development.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-32 md:py-60 bg-primary text-white text-center relative overflow-hidden">
-            <div class="hero-blob bg-accent/20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-150"></div>
-            <div class="max-w-5xl mx-auto px-6 relative z-10">
-                <div class="reveal">
-                    <h2 class="text-5xl md:text-9xl font-heading font-black tracking-tighter mb-12 md:mb-16 leading-[1.1] md:leading-[0.8]">
-                        Wanna start a <br/><span class="italic opacity-30">legacy?</span>
-                    </h2>
-                    <a href="hello.html" class="inline-flex flex-col md:flex-row items-center gap-6 md:gap-10 group">
-                        <span class="text-xl md:text-2xl font-bold tracking-tight border-b-2 border-white/20 pb-2 md:pb-4 group-hover:border-white transition-all">Work with the architect</span>
-                        <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-accent flex items-center justify-center group-hover:scale-110 transition-all">
-                            <i class="fa-solid fa-arrow-right text-lg md:text-xl"></i>
-                        </div>
+                <div>
+                    <a href="mailto:hello@jeswinjose.com" class="bg-brand-green border-2 border-black font-bold px-6 py-2 shadow-brutal hover:shadow-brutal-hover hover:-translate-y-1 transition-all">
+                        HIRE ME
                     </a>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </nav>
 
-    <footer class="pt-24 md:pt-40 pb-12 md:pb-20 px-6 bg-surface overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid lg:grid-cols-12 gap-16 md:gap-20 mb-20 md:mb-32">
-                <div class="lg:col-span-5 reveal">
-                    <div class="mb-8 md:mb-12">
-                        <img src="jessign.png" alt="Signature" class="h-16 md:h-24 w-auto grayscale hover:grayscale-0 transition-all duration-700">
+    <section id="home" class="pt-32 pb-20 lg:pt-48 min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-block bg-brand-yellow border-2 border-black px-4 py-1 font-black uppercase mb-4 shadow-brutal rotate-1">
+                        AI Researcher & Developer
                     </div>
-                    <p class="text-muted text-lg md:text-xl max-w-md leading-relaxed mb-10 font-medium">
-                        Independent Digital Architect focusing on premium visual identities and high-end engineering.
+                    <h1 class="text-6xl md:text-8xl font-extrabold uppercase leading-tight mb-6">
+                        Building<br>
+                        <span class="bg-brand-blue text-white px-2 border-4 border-black inline-block mt-2 shadow-brutal transform -rotate-2">The Future.</span>
+                    </h1>
+                    <p class="text-xl font-bold mb-8 max-w-lg">
+                        Exploring the intersection of Full-stack development, AI automation, and tech education through digital content.
                     </p>
                     <div class="flex gap-4">
-                        <a href="https://www.linkedin.com/in/jeswin-jose-40a38b332/" class="w-12 h-12 rounded-full border border-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
-                        <a href="https://github.com/jeswinjoss" class="w-12 h-12 rounded-full border border-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all"><i class="fa-brands fa-github text-sm"></i></a>
-                        <a href="https://www.instagram.com/jeswin_joss/" class="w-12 h-12 rounded-full border border-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all"><i class="fa-brands fa-instagram text-sm"></i></a>
+                        <a href="#projects" class="bg-black text-white font-bold text-lg px-8 py-4 border-2 border-black shadow-brutal hover:shadow-brutal-hover hover:-translate-y-1 transition-all">
+                            View Work
+                        </a>
+                        <a href="#youtube" class="bg-white text-black font-bold text-lg px-8 py-4 border-2 border-black shadow-brutal hover:shadow-brutal-hover hover:-translate-y-1 transition-all">
+                            Watch Me
+                        </a>
                     </div>
                 </div>
-                
-                <div class="lg:col-span-3 lg:col-start-7 reveal">
-                    <h4 class="text-[11px] font-black tracking-[0.3em] uppercase text-primary mb-8 md:mb-10">Exploration</h4>
-                    <nav class="flex flex-col gap-4 md:gap-5">
-                        <a href="#home" class="text-base md:text-lg text-muted hover:text-accent font-semibold transition-colors">Home</a>
-                        <a href="#work" class="text-base md:text-lg text-muted hover:text-accent font-semibold transition-colors">Work</a>
-                        <a href="about.html" class="text-base md:text-lg text-muted hover:text-accent font-semibold transition-colors">About</a>
-                        <a href="mallufinance.html" class="text-base md:text-lg text-muted hover:text-accent font-semibold transition-colors">Company</a>
-                    </nav>
-                </div>
 
-                <div class="lg:col-span-3 reveal">
-                    <h4 class="text-[11px] font-black tracking-[0.3em] uppercase text-primary mb-8 md:mb-10">Presence</h4>
-                    <p class="text-base md:text-lg text-muted font-medium mb-10">
-                        Kerala, India<br/>Digital HQ
-                    </p>
-                    <a href="mailto:dev.jeswinjose@gmail.com" class="text-base md:text-lg font-bold border-b-2 border-accent pb-2 hover:bg-accent/5 break-all">
-                        hello@jeswinjose.online
-                    </a>
+                <div class="relative bg-white border-4 border-black shadow-brutal p-8 transform lg:rotate-3">
+                    <div class="border-b-4 border-black pb-4 mb-6">
+                        <h2 class="text-3xl font-extrabold uppercase">Mission Control</h2>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4 bg-brand-blue/10 border-2 border-black p-4">
+                            <i class="fa-solid fa-microchip text-3xl text-brand-blue"></i>
+                            <div>
+                                <h4 class="font-black uppercase">AI Research</h4>
+                                <p class="font-bold text-sm">Fine-tuning LLMs and building autonomous agents.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 bg-brand-yellow/10 border-2 border-black p-4">
+                            <i class="fa-brands fa-youtube text-3xl text-brand-blue"></i>
+                            <div>
+                                <h4 class="font-black uppercase">Content Creation</h4>
+                                <p class="font-bold text-sm">Teaching tech to a global audience of developers.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 bg-brand-green/10 border-2 border-black p-4">
+                            <i class="fa-solid fa-terminal text-3xl text-brand-green"></i>
+                            <div>
+                                <h4 class="font-black uppercase">Full-Stack Dev</h4>
+                                <p class="font-bold text-sm">Shipping scalable web apps with Supabase & Vercel.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="pt-12 border-t border-primary/5 flex flex-col md:flex-row justify-between items-center gap-8 md:gap-10">
-                <p class="text-[9px] md:text-[10px] text-muted uppercase tracking-[0.4em] md:tracking-[0.5em] font-bold text-center">
-                    &copy; 2026 Jeswin Jose. ARCHITECTING THE FUTURE.
-                </p>
-                <div class="flex items-center gap-6 md:gap-10">
-                    <span class="text-[9px] md:text-[10px] text-primary/30 uppercase tracking-[0.3em] font-bold">Kerala, IN</span>
-                    <span class="text-[9px] md:text-[10px] text-accent uppercase tracking-[0.3em] font-black">Pixel Perfect</span>
+    <section id="projects" class="py-24 border-t-4 border-black bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12 flex justify-between items-end border-b-4 border-black pb-4">
+                <h2 class="text-4xl md:text-5xl font-extrabold uppercase">Current Builds</h2>
+                <span class="font-bold text-brand-blue underline text-lg">Github/jeswinjose</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-brand-yellow border-4 border-black shadow-brutal p-6 flex flex-col h-full transform hover:-translate-y-2 transition-transform">
+                    <h3 class="text-2xl font-extrabold uppercase mb-2">Mallu Finance</h3>
+                    <p class="font-bold mb-6 flex-grow">A FinTech aggregator revolutionizing financial literacy in India.</p>
+                    <div class="flex gap-2 mb-4 flex-wrap">
+                        <span class="bg-white border-2 border-black px-2 py-1 text-xs font-black">NEXT.JS</span>
+                        <span class="bg-white border-2 border-black px-2 py-1 text-xs font-black">SUPABASE</span>
+                    </div>
+                    <button class="w-full bg-black text-white border-2 border-black py-3 font-bold uppercase shadow-brutal hover:bg-gray-800">Launch Project</button>
                 </div>
+
+                <div class="bg-brand-blue border-4 border-black shadow-brutal p-6 flex flex-col h-full transform hover:-translate-y-2 transition-transform">
+                    <h3 class="text-2xl font-extrabold uppercase mb-2">Chatogram</h3>
+                    <p class="font-bold mb-6 flex-grow">Global anonymous chatting platform focused on zero-footprint privacy.</p>
+                    <div class="flex gap-2 mb-4 flex-wrap">
+                        <span class="bg-white border-2 border-black px-2 py-1 text-xs font-black">TAILWIND</span>
+                        <span class="bg-white border-2 border-black px-2 py-1 text-xs font-black">SOCKET.IO</span>
+                    </div>
+                    <button class="w-full bg-white border-2 border-black py-3 font-bold uppercase shadow-brutal hover:bg-gray-100">Live Demo</button>
+                </div>
+
+                <div class="bg-brand-purple border-4 border-black shadow-brutal p-6 flex flex-col h-full transform hover:-translate-y-2 transition-transform">
+                    <h3 class="text-2xl font-extrabold uppercase mb-2">AI Workflows</h3>
+                    <p class="font-bold mb-6 flex-grow">Custom n8n and Python integrations for business process automation.</p>
+                    <div class="flex gap-2 mb-4 flex-wrap">
+                        <span class="bg-white border-2 border-black px-2 py-1 text-xs font-black">PYTHON</span>
+                        <span class="bg-white border-2 border-black px-2 py-1 text-xs font-black">n8n</span>
+                    </div>
+                    <button class="w-full bg-white border-2 border-black py-3 font-bold uppercase shadow-brutal hover:bg-gray-100">View Specs</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="bg-brand-yellow text-black p-2 border-2 border-white">
+                        <i class="fa-solid fa-code text-xl"></i>
+                    </div>
+                    <span class="font-extrabold text-3xl tracking-tight uppercase">Jeswin<span class="text-brand-blue">.</span></span>
+                </div>
+                <div class="flex space-x-8">
+                    <a href="#" class="text-white hover:text-brand-blue transform hover:scale-125 transition-transform"><i class="fa-brands fa-linkedin text-3xl"></i></a>
+                    <a href="#" class="text-white hover:text-brand-blue transform hover:scale-125 transition-transform"><i class="fa-brands fa-youtube text-3xl"></i></a>
+                    <a href="#" class="text-white hover:text-brand-purple transform hover:scale-125 transition-transform"><i class="fa-brands fa-github text-3xl"></i></a>
+                </div>
+                <p class="font-bold text-gray-500 uppercase">© 2026 Jeswin Jose • Thrissur, India</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
