@@ -29,7 +29,8 @@
                         }
                     },
                     animation: {
-                        'marquee': 'marquee 25s linear infinite',
+                        // Increased speed from 25s to 15s for better flow
+                        'marquee': 'marquee 15s linear infinite',
                     },
                     keyframes: {
                         marquee: {
@@ -47,6 +48,10 @@
             background-image: radial-gradient(#000000 1px, transparent 1px);
             background-size: 30px 30px;
         }
+        /* Hardware acceleration for smoother mobile animation */
+        .smooth-scroll {
+            will-change: transform;
+        }
     </style>
 </head>
 <body class="text-black font-sans antialiased overflow-x-hidden">
@@ -61,7 +66,7 @@
                     <a href="index.html" class="font-extrabold text-2xl tracking-tight uppercase hover:text-brand-blue">Jeswin<span class="text-brand-blue">Jose</span></a>
                 </div>
                 <div>
-                    <a href="index.html" class="bg-brand-yellow border-2 border-black font-bold px-6 py-2 shadow-brutal hover:shadow-brutal-hover hover:-translate-y-1 transition-all">
+                    <a href="index.html" class="bg-brand-yellow border-2 border-black font-bold px-4 py-2 sm:px-6 shadow-brutal hover:shadow-brutal-hover hover:-translate-y-1 transition-all text-sm sm:text-base">
                         BACK HOME
                     </a>
                 </div>
@@ -77,33 +82,33 @@
                 </h1>
             </div>
             
-            <div class="relative overflow-hidden border-4 border-black bg-white shadow-brutal py-8">
-                <div class="flex animate-marquee whitespace-nowrap">
-                    <div class="flex gap-8 px-4">
-                        <div class="w-80 h-48 bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
+            <div class="relative overflow-hidden border-4 border-black bg-white shadow-brutal py-6 sm:py-8">
+                <div class="flex animate-marquee whitespace-nowrap smooth-scroll">
+                    <div class="flex gap-4 sm:gap-8 px-2 sm:px-4">
+                        <div class="w-64 sm:w-80 aspect-video bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
                             <img src="https://via.placeholder.com/320x180/4d9fff/ffffff?text=AI+Research" alt="Video" class="w-full h-full object-cover">
                         </div>
-                        <div class="w-80 h-48 bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
+                        <div class="w-64 sm:w-80 aspect-video bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
                             <img src="https://via.placeholder.com/320x180/ffd230/000000?text=Web+Automation" alt="Video" class="w-full h-full object-cover">
                         </div>
-                        <div class="w-80 h-48 bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
+                        <div class="w-64 sm:w-80 aspect-video bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
                             <img src="https://via.placeholder.com/320x180/b57aff/ffffff?text=Full-stack+Dev" alt="Video" class="w-full h-full object-cover">
                         </div>
-                        <div class="w-80 h-48 bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
+                        <div class="w-64 sm:w-80 aspect-video bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
                             <img src="https://via.placeholder.com/320x180/00e676/000000?text=Mallu+Finance" alt="Video" class="w-full h-full object-cover">
                         </div>
                     </div>
-                    <div class="flex gap-8 px-4">
-                        <div class="w-80 h-48 bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
+                    <div class="flex gap-4 sm:gap-8 px-2 sm:px-4">
+                        <div class="w-64 sm:w-80 aspect-video bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
                             <img src="https://via.placeholder.com/320x180/4d9fff/ffffff?text=AI+Research" alt="Video" class="w-full h-full object-cover">
                         </div>
-                        <div class="w-80 h-48 bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
+                        <div class="w-64 sm:w-80 aspect-video bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
                             <img src="https://via.placeholder.com/320x180/ffd230/000000?text=Web+Automation" alt="Video" class="w-full h-full object-cover">
                         </div>
-                        <div class="w-80 h-48 bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
+                        <div class="w-64 sm:w-80 aspect-video bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
                             <img src="https://via.placeholder.com/320x180/b57aff/ffffff?text=Full-stack+Dev" alt="Video" class="w-full h-full object-cover">
                         </div>
-                        <div class="w-80 h-48 bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
+                        <div class="w-64 sm:w-80 aspect-video bg-gray-200 border-4 border-black flex-shrink-0 shadow-brutal overflow-hidden">
                             <img src="https://via.placeholder.com/320x180/00e676/000000?text=Mallu+Finance" alt="Video" class="w-full h-full object-cover">
                         </div>
                     </div>
@@ -112,7 +117,7 @@
         </div>
     </section>
 
-    <section id="options" class="py-20">
+    <section id="options" class="py-12 sm:py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
@@ -146,7 +151,7 @@
 
     <footer class="bg-black text-white py-12 mt-12">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="font-bold uppercase tracking-widest">© 2026 Jeswin Jose • Content Creator • Thrissur</p>
+            <p class="font-bold uppercase tracking-widest text-sm sm:text-base">© 2026 Jeswin Jose • Content Creator • Thrissur</p>
         </div>
     </footer>
 
